@@ -16,3 +16,21 @@ C:\Users\Worten\source\repos\RCp1\RCp1\obj\Debug\RCp1.pdb
 C:\Users\Worten\source\repos\RCp1\RCp1\obj\Debug\RCp1.RCP1.resources
 C:\Users\Worten\source\repos\RCp1\RCp1\obj\Debug\RCp1.csproj.GenerateResource.Cache
 C:\Users\Worten\source\repos\RCp1\RCp1\obj\Debug\RCp1.Properties.Resources.resources
+X:\School\IST\Redes Complexas\RCp1\bin\Debug\RCp1.exe.config
+X:\School\IST\Redes Complexas\RCp1\bin\Debug\RCp1.exe
+X:\School\IST\Redes Complexas\RCp1\bin\Debug\RCp1.pdb
+X:\School\IST\Redes Complexas\RCp1\bin\Debug\QuickGraph.Data.dll
+X:\School\IST\Redes Complexas\RCp1\bin\Debug\QuickGraph.dll
+X:\School\IST\Redes Complexas\RCp1\bin\Debug\QuickGraph.Graphviz.dll
+X:\School\IST\Redes Complexas\RCp1\bin\Debug\QuickGraph.Serialization.dll
+X:\School\IST\Redes Complexas\RCp1\bin\Debug\QuickGraph.xml
+X:\School\IST\Redes Complexas\RCp1\bin\Debug\QuickGraph.Data.xml
+X:\School\IST\Redes Complexas\RCp1\bin\Debug\QuickGraph.Graphviz.xml
+X:\School\IST\Redes Complexas\RCp1\bin\Debug\QuickGraph.Serialization.xml
+X:\School\IST\Redes Complexas\RCp1\obj\Debug\RCp1.csprojResolveAssemblyReference.cache
+X:\School\IST\Redes Complexas\RCp1\obj\Debug\RCp1.Properties.Resources.resources
+X:\School\IST\Redes Complexas\RCp1\obj\Debug\RCp1.RCP1.resources
+X:\School\IST\Redes Complexas\RCp1\obj\Debug\RCp1.csproj.GenerateResource.Cache
+X:\School\IST\Redes Complexas\RCp1\obj\Debug\RCp1.csproj.CoreCompileInputs.cache
+X:\School\IST\Redes Complexas\RCp1\obj\Debug\RCp1.exe
+X:\School\IST\Redes Complexas\RCp1\obj\Debug\RCp1.pdb

@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Collections;
 using System.Diagnostics;
+using System.Globalization;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace RCp1
@@ -26,7 +27,8 @@ namespace RCp1
         private void button1_Click(object sender, EventArgs e)
         {
             int N = int.Parse(textBox1.Text);
-            double p = double.Parse(textBox2.Text);
+            double p = 0.0;
+            double.TryParse(textBox2.Text,NumberStyles.Any,CultureInfo.InvariantCulture,out p);
             Console.WriteLine("Vertexs: " + N + " " + "Probability: " + p);
             RandomGraph g = new RandomGraph(N, p);
 

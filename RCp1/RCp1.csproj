@@ -60,7 +60,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\RandomNetwork.cs" />
     <Compile Include="FileDotEngine.cs" />
+    <Compile Include="Metrics\ClusteringCoefficientMetric.cs" />
+    <Compile Include="Metrics\DegreeDistributionMetric.cs" />
+    <Compile Include="Metrics\INetworkMetric.cs" />
+    <Compile Include="Models\BarabasiAlbertModel.cs" />
+    <Compile Include="Models\ErdösRenyiModel .cs" />
+    <Compile Include="Models\NetworkRandomizerModel.cs" />
+    <Compile Include="Models\RandomModelBase.cs" />
+    <Compile Include="Generators\IRandomNetworkGenerator.cs" />
+    <Compile Include="Models\RandomNetworkModel.cs" />
+    <Compile Include="Models\WattsStrogatzModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -69,6 +80,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="RandomGraph.cs" />
+    <Compile Include="RandomGraphStrings.cs" />
     <Compile Include="RCP1.cs">
       <SubType>Form</SubType>
     </Compile>

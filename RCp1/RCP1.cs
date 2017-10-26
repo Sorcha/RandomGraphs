@@ -14,6 +14,7 @@ using System.Collections;
 using System.Diagnostics;
 using System.Globalization;
 using System.Windows.Forms.DataVisualization.Charting;
+using RCp1.Models;
 
 namespace RCp1
 {
@@ -22,6 +23,7 @@ namespace RCp1
         public RCP1()
         {
             InitializeComponent();
+  
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -30,16 +32,17 @@ namespace RCp1
             double p = 0.0;
             double.TryParse(textBox2.Text,NumberStyles.Any,CultureInfo.InvariantCulture,out p);
             Console.WriteLine("Vertexs: " + N + " " + "Probability: " + p);
-            RandomGraph g = new RandomGraph(N, p);
+           // RandomGraph g = new RandomGraph(N, p);
 
-            var graphviz = new GraphvizAlgorithm<int, UndirectedEdge<int>>(g.getGraph());
+            ErdösRenyiModel model = new ErdösRenyiModel(N,p);
+            var graphviz = new GraphvizAlgorithm<int, UndirectedEdge<int>>(model.Graph);
             string output = graphviz.Generate(new FileDotEngine(), "graph");
             pictureBox1.ImageLocation = "graph.png";
-            double avg_k = (double)2*g.getCount() / N;
-            double expected_avg_k = (double)2 * g.getMaxEdges() / N;
-            label4.Text = string.Format(@"{0}", avg_k);
-            label8.Text = string.Format(@"{0}", expected_avg_k);
-            label6.Text = string.Format(@"{0}", g.getGCC());
+            //double avg_k = (double)2*g.getCount() / N;
+            //double expected_avg_k = (double)2 * g.getMaxEdges() / N;
+            //label4.Text = string.Format(@"{0}", avg_k);
+            //label8.Text = string.Format(@"{0}", expected_avg_k);
+            //label6.Text = string.Format(@"{0}", g.getGCC());
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -155,7 +158,7 @@ namespace RCp1
                 BorderWidth = 5,
                 IsVisibleInLegend = true,
                 IsXValueIndexed = true,
-                ChartType = SeriesChartType.Line,
+                ChartType = SeriesChartType.FastPoint,
             };
 
             for (int i = 0; i < iter; i++)
@@ -164,6 +167,111 @@ namespace RCp1
             }
             chart1.Series.Add(series1);
             ChartLegends(name);
+        }
+
+        private void tabPage5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ErdosGenerateButton_Click(object sender, EventArgs e)
+        {
+            int.TryParse(ErdosNumberOfNodesTextBox.Text,out var numberOfNodes);
+
+            double.TryParse(ErdosProbabilityTextBox.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out var probability);
+
+            var model = new ErdösRenyiModel(numberOfNodes, probability);
+
+            var graphviz = new GraphvizAlgorithm<int, UndirectedEdge<int>>(model.Graph);
+
+            string output = graphviz.Generate(new FileDotEngine(), "graph");
+
+            ErdosGraphPictureBox.ImageLocation = @"graph.png";
+            ErdosGraphPictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
+
+            
+
+            var degreeDistribuition = model.DegreeDistribuition();
+
+            foreach (var degree in degreeDistribuition)
+            {
+                Console.WriteLine($@"{degree.Key} - {degree.Value}");
+            }
+
+            ErdosDistribuitionDegreeChart.Titles.Add(new Title(RandomGraphStrings.DegreeChartTitle));
+
+            GenerateDegreeDistribuitionChart(ErdosDistribuitionDegreeChart, degreeDistribuition);
+        }
+
+        private void GenerateDegreeDistribuitionChart(Chart chart,
+            Dictionary<int, int> distribuitionDegree)
+        {
+            chart.Series.Clear();
+            chart.Legends.Clear();
+            chart.ChartAreas.Clear();
+            chart.Titles.Clear();
+            chart.Titles.Add(new Title(RandomGraphStrings.DegreeChartTitle));
+
+            var axisX = new Axis
+            {
+                Title = "Sum K"
+            };
+
+            var axisY = new Axis
+            {
+                Title = "K",
+            };
+
+            var chartArea = new ChartArea
+            {
+                AxisX = axisX,
+                AxisY = axisY,
+            };
+
+            chart.ChartAreas.Add(chartArea);
+
+            var serie = new Series
+            {
+                Name = "Name",
+                Color = Color.Blue,
+                BorderWidth = 5,
+                IsVisibleInLegend = true,
+                IsXValueIndexed = true,
+                ChartType = SeriesChartType.FastPoint,
+            };
+
+            for (int i = 0; i < distribuitionDegree.Keys.Count; i++)
+            {
+                var degree = distribuitionDegree.ElementAt(i);
+                serie.Points.AddXY(degree.Key,degree.Value);
+            }
+
+            chart.Series.Add(serie);
+        }
+
+        private void ChangeChartSeries(Chart chart,
+            double[] datax, 
+            double[] datay, 
+            string name, 
+            int iter)
+        {
+            var serie = new Series
+            {
+                Name = name,
+                Color = Color.Blue,
+                BorderWidth = 5,
+                IsVisibleInLegend = true,
+                IsXValueIndexed = true,
+                ChartType = SeriesChartType.Line,
+            };
+
+            for (int i = 0; i < iter; i++)
+            {
+                serie.Points.AddXY(datax[i], datay[i]);
+            }
+
+            chart.Series.Add(serie);
+            //ChartLegends(name);
         }
     }
 }

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using QuickGraph;
 using QuickGraph.Graphviz;
 using System.Windows.Forms;
+using RCp1.Data;
+using RCp1.Metrics;
+using RCp1.Models;
 
 namespace RCp1
 {
@@ -13,6 +16,7 @@ namespace RCp1
     {
         static void Main(string[] args)
         {
+            testBarabasiAlbertModel();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new RCP1());
@@ -30,6 +34,36 @@ namespace RCp1
             //}
             */
             
+        }
+
+        public static void testBarabasiAlbertModel()
+        {
+
+            //Model specific variabels
+            int nodes = 50;
+            int degree = 2;
+            bool allowReflexive = false;
+            bool directed = false;
+            int init = 3;
+            int edges = ((init) * (init - 1) / 2 + (degree * (nodes - init)));
+
+            //Create the model
+            BarabasiAlbertModel bam;
+
+
+            for (int j = 4; j <= 10; j += 2)
+            {
+                bam = new BarabasiAlbertModel(j, allowReflexive, directed, init, degree);
+
+                RandomNetwork random_network = bam.Generate();
+                DegreeDistributionMetric metric = new DegreeDistributionMetric();
+                AverageDegreeMetric m = new AverageDegreeMetric();
+                m.Analyze(random_network, directed);
+                double c = metric.Analyze(random_network, directed);
+                
+            }
+
+
         }
     }
 }

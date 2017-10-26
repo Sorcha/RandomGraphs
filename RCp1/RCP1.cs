@@ -30,7 +30,7 @@ namespace RCp1
         {
             int N = int.Parse(textBox1.Text);
             double p = 0.0;
-            double.TryParse(textBox2.Text,NumberStyles.Any,CultureInfo.InvariantCulture,out p);
+            double.TryParse(textBox2.Text.Replace(',', '.'), NumberStyles.Any,CultureInfo.InvariantCulture,out p);
             Console.WriteLine("Vertexs: " + N + " " + "Probability: " + p);
            // RandomGraph g = new RandomGraph(N, p);
 

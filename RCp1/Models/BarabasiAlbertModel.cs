@@ -12,8 +12,7 @@ namespace RCp1.Models
 
   
         private readonly int _edgesToAdd;
-
-
+        
         public BarabasiAlbertModel(int pNumNodes, bool pAllowSelfEdge,
             bool pDirected, int pInit, int pEdgesToAdd): base(pNumNodes, 0, pAllowSelfEdge, pDirected)
         {

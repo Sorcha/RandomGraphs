@@ -22,7 +22,17 @@ namespace RCp1.Metrics
 
         public double Analyze(RandomNetwork pNetwork, bool pDirected)
         {
-            return 0.0;
+            double averageDegree = 0;
+            
+            double N = pNetwork.Nodes().Count;
+            
+            double E = pNetwork.Edges().Count;
+            
+            E *= 2.0d;
+            
+            averageDegree = E / N;
+            
+            return averageDegree;
         }
     }
 }

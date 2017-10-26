@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using QuickGraph;
 using RCp1.Data;
+using RCp1.Generators;
 
 namespace RCp1.Models
 {
@@ -56,8 +57,7 @@ namespace RCp1.Models
             {
                 _degree = (NumNodes - 1) / 2;
             }
-
-            //Make sure that the degree chosen is feasbile
+            
             if (!Directed && AllowSelfEdge && (2 * _degree > NumNodes))
             {
                 _degree = NumNodes / 2;

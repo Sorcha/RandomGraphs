@@ -1,5 +1,6 @@
 ﻿using System;
 using RCp1.Data;
+using RCp1.Generators;
 
 namespace RCp1.Models
 {

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RCp1.Data;
+﻿using RCp1.Data;
 
-namespace RCp1.Models
+namespace RCp1.Generators
 {
     public interface IRandomNetworkGenerator
     {

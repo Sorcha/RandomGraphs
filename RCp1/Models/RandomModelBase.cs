@@ -16,8 +16,7 @@ namespace RCp1.Models
         {
             NumberOfNodes = numberOfNodes;
         }
-
-
+       
         public Dictionary<int, int> DegreeDistribuition()
         {
             var distribuitionDegree = new Dictionary<int, int>();

@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Data\RandomNetwork.cs" />
     <Compile Include="FileDotEngine.cs" />
+    <Compile Include="Metrics\AverageDegreeMetric.cs" />
     <Compile Include="Metrics\ClusteringCoefficientMetric.cs" />
     <Compile Include="Metrics\DegreeDistributionMetric.cs" />
     <Compile Include="Metrics\INetworkMetric.cs" />
@@ -79,6 +80,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RandomErdosGraph.cs" />
     <Compile Include="RandomGraph.cs" />
     <Compile Include="RandomGraphStrings.cs" />
     <Compile Include="RCP1.cs">

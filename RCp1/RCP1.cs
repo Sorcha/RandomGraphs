@@ -27,10 +27,9 @@ namespace RCp1
         private void button1_Click(object sender, EventArgs e)
         {
             int N = int.Parse(textBox1.Text);
-            double p = 0.0;
-            double.TryParse(textBox2.Text,NumberStyles.Any,CultureInfo.InvariantCulture,out p);
+            double p = double.Parse(textBox2.Text);
             Console.WriteLine("Vertexs: " + N + " " + "Probability: " + p);
-            RandomGraph g = new RandomGraph(N, p);
+            RandomErdosGraph g = new RandomErdosGraph(N, p);
 
             var graphviz = new GraphvizAlgorithm<int, UndirectedEdge<int>>(g.getGraph());
             string output = graphviz.Generate(new FileDotEngine(), "graph");

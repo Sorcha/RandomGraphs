@@ -34,3 +34,21 @@ X:\School\IST\Redes Complexas\RCp1\obj\Debug\RCp1.csproj.GenerateResource.Cache
 X:\School\IST\Redes Complexas\RCp1\obj\Debug\RCp1.csproj.CoreCompileInputs.cache
 X:\School\IST\Redes Complexas\RCp1\obj\Debug\RCp1.exe
 X:\School\IST\Redes Complexas\RCp1\obj\Debug\RCp1.pdb
+C:\Users\Worten\Documents\RandomGraphs\RCp1\bin\Debug\RCp1.exe.config
+C:\Users\Worten\Documents\RandomGraphs\RCp1\bin\Debug\RCp1.exe
+C:\Users\Worten\Documents\RandomGraphs\RCp1\bin\Debug\RCp1.pdb
+C:\Users\Worten\Documents\RandomGraphs\RCp1\bin\Debug\QuickGraph.Data.dll
+C:\Users\Worten\Documents\RandomGraphs\RCp1\bin\Debug\QuickGraph.dll
+C:\Users\Worten\Documents\RandomGraphs\RCp1\bin\Debug\QuickGraph.Graphviz.dll
+C:\Users\Worten\Documents\RandomGraphs\RCp1\bin\Debug\QuickGraph.Serialization.dll
+C:\Users\Worten\Documents\RandomGraphs\RCp1\bin\Debug\QuickGraph.xml
+C:\Users\Worten\Documents\RandomGraphs\RCp1\bin\Debug\QuickGraph.Data.xml
+C:\Users\Worten\Documents\RandomGraphs\RCp1\bin\Debug\QuickGraph.Graphviz.xml
+C:\Users\Worten\Documents\RandomGraphs\RCp1\bin\Debug\QuickGraph.Serialization.xml
+C:\Users\Worten\Documents\RandomGraphs\RCp1\obj\Debug\RCp1.csprojResolveAssemblyReference.cache
+C:\Users\Worten\Documents\RandomGraphs\RCp1\obj\Debug\RCp1.Properties.Resources.resources
+C:\Users\Worten\Documents\RandomGraphs\RCp1\obj\Debug\RCp1.RCP1.resources
+C:\Users\Worten\Documents\RandomGraphs\RCp1\obj\Debug\RCp1.csproj.GenerateResource.Cache
+C:\Users\Worten\Documents\RandomGraphs\RCp1\obj\Debug\RCp1.csproj.CoreCompileInputs.cache
+C:\Users\Worten\Documents\RandomGraphs\RCp1\obj\Debug\RCp1.exe
+C:\Users\Worten\Documents\RandomGraphs\RCp1\obj\Debug\RCp1.pdb

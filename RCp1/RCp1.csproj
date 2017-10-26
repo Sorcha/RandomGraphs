@@ -68,6 +68,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RandomErdosGraph.cs" />
     <Compile Include="RandomGraph.cs" />
     <Compile Include="RCP1.cs">
       <SubType>Form</SubType>

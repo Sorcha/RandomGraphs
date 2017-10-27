@@ -37,27 +37,32 @@ namespace RCp1.Metrics
                 degree[nodeDegree]++;
             }
 
-            return leastSquares(degree)[0];
+            return LeastSquares(degree)[0];
+        }
+
+        public Dictionary<int, int> Analyze(RandomNetwork network)
+        {
+            var distribuitionDegree = new Dictionary<int, int>();
+            foreach (var vertice in network.Nodes())
+            {
+                int degree = network.MGraph.AdjacentDegree(vertice);
+
+                if (distribuitionDegree.ContainsKey(degree))
+                {
+                    distribuitionDegree[degree] += 1;
+
+                }
+                else
+                {
+                    distribuitionDegree.Add(degree, 1);
+                }
+            }
+
+            return distribuitionDegree;
         }
 
 
-
-        /**----------------------------------------------------------------------
-         *
-         * Fits the logarithm distribution/degree to a straight line of the form:
-         *	a + b *x which is then interrpreted as a*x^y in the non-logarithmic scale
-         *
-         * @param dist The distribution of node degrees to fit to a logarithmized straight line
-         *
-         * @return An array of 4 doubles
-         *					index 0:  beta value
-         *					index 1:  log(alpha) value (e^alpha for comparisons with NetworkAnalyzer
-         *					index 2:  r^2 correlation coefficient
-         *					index 3:  covariance
-         *
-         *  For more see Wolfram Least Squares Fitting
-         *----------------------------------------------------------------------*/
-        public double[] leastSquares(int [] dist)
+        public double[] LeastSquares(int [] dist)
         {
 
             //Vararibles to compute

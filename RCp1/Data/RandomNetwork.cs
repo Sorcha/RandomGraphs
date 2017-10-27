@@ -10,7 +10,7 @@ namespace RCp1.Data
 
         private int _edgeIdCount;
 
-        private readonly UndirectedGraph<int, UndirectedEdge<int>> _mGraph;
+        public UndirectedGraph<int, UndirectedEdge<int>> MGraph { get; private set; }
 
         private string _mNetworkName;
 
@@ -26,7 +26,7 @@ namespace RCp1.Data
         public RandomNetwork(bool pDirected)
         {
 
-            _mGraph = new UndirectedGraph<int, UndirectedEdge<int>>();
+            MGraph = new UndirectedGraph<int, UndirectedEdge<int>>();
 
             _mDirected = pDirected;
 
@@ -42,13 +42,13 @@ namespace RCp1.Data
 
         public List<int> Nodes()
         {
-            return _mGraph.Vertices.ToList();
+            return MGraph.Vertices.ToList();
         }
 
 
         public List<UndirectedEdge<int>> Edges()
         {
-            return _mGraph.Edges.ToList();
+            return MGraph.Edges.ToList();
         }
 
         public int NodeCreate()
@@ -56,7 +56,7 @@ namespace RCp1.Data
             var nodeNumber = _nodeIdCount;
             _mNumNodes++;
             _nodeIdCount++;
-            _mGraph.AddVertex(nodeNumber);
+            MGraph.AddVertex(nodeNumber);
             return nodeNumber;
         }
 
@@ -65,7 +65,7 @@ namespace RCp1.Data
         public bool NodeRemove(int node)
         {
             _mNumNodes--;
-            return _mGraph.RemoveVertex(node);
+            return MGraph.RemoveVertex(node);
         }
 
         public int EdgeCreate(int sourceNode, int targetNode, bool directed)
@@ -75,7 +75,7 @@ namespace RCp1.Data
             _edgeIdCount++;
             var edge = new UndirectedEdge<int>(sourceNode, targetNode);
             _edgeDictionary.Add(edgeNumber, edge);
-            _mGraph.AddEdge(new UndirectedEdge<int>(sourceNode, targetNode));
+            MGraph.AddEdge(edge);
             return edgeNumber;
         }
 
@@ -85,21 +85,39 @@ namespace RCp1.Data
             _mNumEdges--;
             var edgeUn = _edgeDictionary[edge];
             _edgeDictionary.Remove(edge);
-            return _mGraph.RemoveEdge(edgeUn);
+            return MGraph.RemoveEdge(edgeUn);
         }
 
         public bool EdgeRemove(UndirectedEdge<int> edge)
         {
-            _mNumEdges--;
-            var edgeUn = _edgeDictionary.First(e => e.Value==edge);
-            _edgeDictionary.Remove(edgeUn.Key);
-            return _mGraph.RemoveEdge(edge);
+            if (MGraph.ContainsEdge(edge))
+            {
+                _mNumEdges--;
+                var findf = _edgeDictionary.Values.ToList()
+                    .Find((e) =>
+                    {
+                        return e.Target == edge.Target && e.Source == edge.Source;
+                    }
+                    );
+                if (_edgeDictionary.Values.ToList().Find((e) => e.Target == edge.Target && e.Source == edge.Source) != null)
+                {
+                    var edgeUn = _edgeDictionary.First(e => e.Value.Target == edge.Target && e.Value.Source==edge.Source);
+                    if (edgeUn.Equals(default(KeyValuePair<int, UndirectedEdge<int>>)))
+                    {
+                        return false;
+                    }
+                    _edgeDictionary.Remove(edgeUn.Key);
+                }
+                return MGraph.RemoveEdge(edge);
+            }
+            
+            return false;
         }
 
 
         public bool NodeExists(int node)
         {
-            return _mGraph.ContainsVertex(node);
+            return MGraph.ContainsVertex(node);
         }
 
 
@@ -123,7 +141,7 @@ namespace RCp1.Data
         public List<UndirectedEdge<int>> EdgesAdjacent(int node, bool outgoing, bool incoming,
             bool undirected)
         {
-            return _mGraph.AdjacentEdges(node).ToList();
+            return MGraph.AdjacentEdges(node).ToList();
         }
 
 
@@ -131,8 +149,8 @@ namespace RCp1.Data
             bool undirected)
         {
 
-            var edgesNode0AndNode1 = _mGraph.Edges.Where((e) => e.Source == node0 && e.Target == node1);
-            var edgesNode1AndNode0 = _mGraph.Edges.Where((e) => e.Source == node1 && e.Target == node0);
+            var edgesNode0AndNode1 = MGraph.Edges.Where((e) => e.Source == node0 && e.Target == node1);
+            var edgesNode1AndNode0 = MGraph.Edges.Where((e) => e.Source == node1 && e.Target == node0);
 
             return edgesNode1AndNode0.Concat(edgesNode0AndNode1).ToList();
 

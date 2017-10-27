@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using QuickGraph;
+using QuickGraph.Algorithms.ConnectedComponents;
 
 namespace RCp1.Models
 {
@@ -9,6 +10,8 @@ namespace RCp1.Models
         protected long NumberOfNodes;
 
         protected double Probability;
+        protected long Count;
+        protected long MaxEdges;
 
         public UndirectedGraph<int, UndirectedEdge<int>> Graph { get; set; }
 
@@ -16,7 +19,46 @@ namespace RCp1.Models
         {
             NumberOfNodes = numberOfNodes;
         }
-       
+        public long getCount()
+        {
+            return Count;
+        }
+        public long getMaxEdges()
+        {
+            return MaxEdges;
+        }
+        public int getGCC()
+        {
+            int max = 0;
+            int[] maxs;
+            var x = new ConnectedComponentsAlgorithm<int, UndirectedEdge<int>>(Graph);
+            x.Compute();
+            maxs = new int[x.ComponentCount];
+            IEnumerator<KeyValuePair<int, int>> enumerator = x.Components.GetEnumerator();
+            //Console.WriteLine("Value : " + enumerator.Current.Value);
+            //maxs[enumerator.Current.Value]++;
+
+            while (enumerator.MoveNext())
+            {
+                //Console.WriteLine("Value : " + enumerator.Current.Value);
+                maxs[enumerator.Current.Value]++;
+            }
+            for (int i = 0; i < x.ComponentCount; i++)
+            {
+                if (maxs[i] > max)
+                {
+                    max = maxs[i];
+                }
+            }
+
+            return max;
+        }
+        public UndirectedGraph<int, UndirectedEdge<int>> getGraph()
+        {
+            //g.TrimEdgeExcess();
+            return Graph;
+        }
+
         public Dictionary<int, int> DegreeDistribuition()
         {
             var distribuitionDegree = new Dictionary<int, int>();
@@ -67,7 +109,7 @@ namespace RCp1.Models
             return sum / Graph.VertexCount;
         }
 
-  
+
 
     }
 }

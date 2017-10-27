@@ -34,15 +34,15 @@ namespace RCp1
             Console.WriteLine("Vertexs: " + N + " " + "Probability: " + p);
            // RandomGraph g = new RandomGraph(N, p);
 
-            ErdösRenyiModel model = new ErdösRenyiModel(N,p);
-            var graphviz = new GraphvizAlgorithm<int, UndirectedEdge<int>>(model.Graph);
+            ErdösRenyiModel g = new ErdösRenyiModel(N,p);
+            var graphviz = new GraphvizAlgorithm<int, UndirectedEdge<int>>(g.Graph);
             string output = graphviz.Generate(new FileDotEngine(), "graph");
             pictureBox1.ImageLocation = "graph.png";
-            //double avg_k = (double)2*g.getCount() / N;
-            //double expected_avg_k = (double)2 * g.getMaxEdges() / N;
-            //label4.Text = string.Format(@"{0}", avg_k);
-            //label8.Text = string.Format(@"{0}", expected_avg_k);
-            //label6.Text = string.Format(@"{0}", g.getGCC());
+            double avg_k = (double)2*g.getCount() / N;
+            double expected_avg_k = (double) g.getMaxEdges() / N;
+            label4.Text = string.Format(@"{0}", avg_k);
+            label8.Text = string.Format(@"{0}", expected_avg_k);
+            label6.Text = string.Format(@"{0}", g.getGCC());
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -59,7 +59,9 @@ namespace RCp1
             //  chart1.MinimumSize = Size.
             for (int i = 0; i < iter; i++)
             {
-                RandomGraph g = new RandomGraph(N, (double)i/iter);
+                //RandomGraph g = new RandomGraph(N, (double)i/iter);
+                ErdösRenyiModel g = new ErdösRenyiModel(N, (double)i / iter);
+
                 if ((double)2 * g.getCount() / N > 6) {
                     break;
                 }
@@ -95,9 +97,9 @@ namespace RCp1
         {
             var axisX = new Axis
             {
-                //Minimum = 0,
-                //Maximum = 6,
-                //Interval = 1,
+                Minimum = 0,
+                Maximum = 6,
+                Interval = 1,
             };
 
             var axisY = new Axis
@@ -106,7 +108,7 @@ namespace RCp1
                 Maximum = 1,
                 Title = title,
             };
-
+ 
             var chartArea1 = new ChartArea
             {
                 AxisX = axisX,

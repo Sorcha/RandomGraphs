@@ -29,60 +29,40 @@ namespace RCp1
         private void button1_Click(object sender, EventArgs e)
         {
             int N = int.Parse(textBox1.Text);
+            int k = int.Parse(textBox5.Text);
             double p = 0.0;
             double.TryParse(textBox2.Text,NumberStyles.Any,CultureInfo.InvariantCulture,out p);
-            Console.WriteLine("Vertexs: " + N + " " + "Probability: " + p);
+            //Console.WriteLine("Vertexs: " + N + " " + "Probability: " + p);
            // RandomGraph g = new RandomGraph(N, p);
 
-            ErdösRenyiModel g = new ErdösRenyiModel(N,p);
-            var graphviz = new GraphvizAlgorithm<int, UndirectedEdge<int>>(g.Graph);
+            //ErdösRenyiModel g = new ErdösRenyiModel(N,p);
+            WattsStrogatzModel g = new WattsStrogatzModel(N, false, false, p, k);
+            Data.RandomNetwork d = g.Generate();
+            var graphviz = new GraphvizAlgorithm<int, UndirectedEdge<int>>(d.MGraph);
             string output = graphviz.Generate(new FileDotEngine(), "graph");
             pictureBox1.ImageLocation = "graph.png";
-            double avg_k = (double)2*g.getCount() / N;
-            double expected_avg_k = (double) g.getMaxEdges() / N;
+            double avg_k = (double)2 * d.GetNumEdges() / N; ;
+            //Console.WriteLine(d.GetNumEdges());
+            //double expected_avg_k =  p * (N - 1);
             label4.Text = string.Format(@"{0}", avg_k);
-            label8.Text = string.Format(@"{0}", expected_avg_k);
-            label6.Text = string.Format(@"{0}", g.getGCC());
+            //label8.Text = string.Format(@"{0}", expected_avg_k);
+            label6.Text = string.Format(@"{0}", d.getGCC());
+
+            var degreeDistribuition = d.DegreeDistribuition();
+
+
+            ErdosDistribuitionDegreeChart.Titles.Add(new Title(RandomGraphStrings.DegreeChartTitle));
+
+            GenerateDegreeDistribuitionChart(chart2, degreeDistribuition);
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            int N = int.Parse(textBox4.Text);
-            int iter = int.Parse(textBox3.Text);
-            double[] datax = new double[iter];
-            double[] datay = new double[iter];
-            chart1.Series.Clear();
-            chart1.Legends.Clear();
-            chart1.Titles.Clear();
-            chart1.ChartAreas.Clear();
-
-            //  chart1.MinimumSize = Size.
-            for (int i = 0; i < iter; i++)
-            {
-                //RandomGraph g = new RandomGraph(N, (double)i/iter);
-                ErdösRenyiModel g = new ErdösRenyiModel(N, (double)i / iter);
-
-                if ((double)2 * g.getCount() / N > 6) {
-                    break;
-                }
-                datay[i] = (double) g.getGCC()/N;
-                datax[i] = (double)2 * g.getCount() / N;
-                //Console.WriteLine(g.getGCC());
-            }
-            ChartSeries(datax, datay, "<k> = Ng/N", iter, N);
-            ChartAreas("Ng/N");
-            ChartTitle("");
-            //chart1.Invalidate();
-
-
-        }
         private void RunReport()
         {
             // Clear Chart
-            chart1.Series.Clear();
-            chart1.Legends.Clear();
-            chart1.ChartAreas.Clear();
-            chart1.Titles.Clear();
+            chart5.Series.Clear();
+            chart5.Legends.Clear();
+            chart5.ChartAreas.Clear();
+            chart5.Titles.Clear();
 
             // Build Chart
             //ChartSeries(datax, datay, "<k> = Ng/N", iter, N);
@@ -115,7 +95,7 @@ namespace RCp1
                 AxisY = axisY,
             };
 
-            chart1.ChartAreas.Add(chartArea1);
+            chart5.ChartAreas.Add(chartArea1);
         }
 
         /// <summary>
@@ -130,7 +110,7 @@ namespace RCp1
                 Text = title + "Graph Data",
                 Visible = true,
             };
-            chart1.Titles.Add(titles1);
+            chart5.Titles.Add(titles1);
         }
 
         /// <summary>
@@ -143,7 +123,7 @@ namespace RCp1
             {
                 Name = name,
             };
-            chart1.Legends.Add(legends1);
+            chart5.Legends.Add(legends1);
         }
 
         /// <summary>
@@ -157,17 +137,18 @@ namespace RCp1
             {
                 Name = name,
                 Color = Color.Blue,
-                BorderWidth = 5,
+                //BorderWidth = 5,
                 IsVisibleInLegend = true,
                 IsXValueIndexed = true,
-                ChartType = SeriesChartType.FastPoint,
+                ChartType = SeriesChartType.Line,
             };
 
             for (int i = 0; i < iter; i++)
             {
+                Console.WriteLine(""+datax[i]+" , "+ datay[i]);
                 series1.Points.AddXY(datax[i], datay[i]);
             }
-            chart1.Series.Add(series1);
+            chart5.Series.Add(series1);
             ChartLegends(name);
         }
 
@@ -179,7 +160,8 @@ namespace RCp1
         private void ErdosGenerateButton_Click(object sender, EventArgs e)
         {
             int.TryParse(ErdosNumberOfNodesTextBox.Text,out var numberOfNodes);
-
+            int iter = numberOfNodes;
+            int N = numberOfNodes;
             double.TryParse(ErdosProbabilityTextBox.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out var probability);
 
             var model = new ErdösRenyiModel(numberOfNodes, probability);
@@ -189,20 +171,49 @@ namespace RCp1
             string output = graphviz.Generate(new FileDotEngine(), "graph");
 
             ErdosGraphPictureBox.ImageLocation = @"graph.png";
-            ErdosGraphPictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
 
-            
+            double avg_k = (double)2 * model.getCount() / numberOfNodes; ;
+            double expected_avg_k =  probability * (numberOfNodes - 1);
+            label18.Text = string.Format(@"{0}", avg_k);
+            label13.Text = string.Format(@"{0}", expected_avg_k);
+            label15.Text = string.Format(@"{0}", model.getGCC());
+
+
 
             var degreeDistribuition = model.DegreeDistribuition();
 
-            foreach (var degree in degreeDistribuition)
-            {
-                Console.WriteLine($@"{degree.Key} - {degree.Value}");
-            }
+            //foreach (var degree in degreeDistribuition)
+            //{
+              //  Console.WriteLine($@"{degree.Key} - {degree.Value}");
+            //}
 
             ErdosDistribuitionDegreeChart.Titles.Add(new Title(RandomGraphStrings.DegreeChartTitle));
 
             GenerateDegreeDistribuitionChart(ErdosDistribuitionDegreeChart, degreeDistribuition);
+
+            double[] datax = new double[iter];
+            double[] datay = new double[iter];
+            chart5.Series.Clear();
+            chart5.Legends.Clear();
+            chart5.Titles.Clear();
+            chart5.ChartAreas.Clear();
+            //  chart1.MinimumSize = Size.
+            for (int i = 0; i < iter; i++)
+            {
+                //RandomGraph g = new RandomGraph(N, (double)i/iter);
+                ErdösRenyiModel g = new ErdösRenyiModel(N, (double)i / iter);
+
+                if ((double)2 * g.getCount() / N > 6)
+                {
+                    break;
+                }
+                datay[i] = (double)g.getGCC() / N;
+                //datax[i] = (double) i / iter;
+                datax[i] = (double)2 * g.getCount() / N;
+            }
+            ChartSeries(datax, datay, "<k> = Ng/N", iter, N);
+            ChartAreas("Ng/N");
+            ChartTitle("");
         }
 
         private void GenerateDegreeDistribuitionChart(Chart chart,

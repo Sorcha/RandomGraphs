@@ -31,7 +31,6 @@ namespace RCp1.Models
             Random = new Random(Seed);
         }
 
-
         public void SetSeed(int pSeed)
         {
             Seed = pSeed;

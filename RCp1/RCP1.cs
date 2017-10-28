@@ -20,6 +20,7 @@ namespace RCp1
 {
     public partial class RCP1 : Form
     {
+        public bool visualize = true;
         public RCP1()
         {
             InitializeComponent();
@@ -30,18 +31,20 @@ namespace RCp1
         {
             int N = int.Parse(textBox1.Text);
             int k = int.Parse(textBox5.Text);
-            int iter = N;
+            //int iter = N;
             double p = 0.0;
             double.TryParse(textBox2.Text,NumberStyles.Any,CultureInfo.InvariantCulture,out p);
             WattsStrogatzModel g = new WattsStrogatzModel(N, false, false, p, k);
             Data.RandomNetwork d = g.Generate();
             if (radioButton4.Checked)
             {
-                var graphviz = new GraphvizAlgorithm<int, UndirectedEdge<int>>(d.MGraph);
-                string output = graphviz.Generate(new FileDotEngine(), "graph");
-                pictureBox1.ImageLocation = "graph.png";
-                Metrics.ClusteringCoefficientMetric m = new Metrics.ClusteringCoefficientMetric();
-                label4.Text = string.Format(@"{0}", m.Analyze(d, false));
+                if (visualize)
+                {
+                    var graphviz = new GraphvizAlgorithm<int, UndirectedEdge<int>>(d.MGraph);
+                    string output = graphviz.Generate(new FileDotEngine(), "graph");
+                    pictureBox1.ImageLocation = "graph.png";
+                }
+                label4.Text = string.Format(@"{0}", d.ClusteringCoefficient());
                 var degreeDistribuition = d.DegreeDistribuition();
 
 
@@ -51,10 +54,78 @@ namespace RCp1
             }
             if (radioButton3.Checked)
             {
-                GenerateClusteringCoefficientChart(chart3, iter, N, k);
+                GenerateClusteringCoefficientChart(chart3, N, k);
             }
         }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int N = int.Parse(textBox4.Text);
+            int N_init = int.Parse(textBox6.Text);
+            int E = int.Parse(textBox3.Text); ;
+            BarabasiAlbertModel g = new BarabasiAlbertModel(N, false, false, N_init, E);
+            Data.RandomNetwork d = g.Generate();
+            if (radioButton6.Checked)
+            {
+                if (visualize)
+                {
+                    var graphviz = new GraphvizAlgorithm<int, UndirectedEdge<int>>(d.MGraph);
+                    string output = graphviz.Generate(new FileDotEngine(), "graph");
+                    pictureBox2.ImageLocation = "graph.png";
+                }
+                label4.Text = string.Format(@"{0}", d.ClusteringCoefficient());
+                var degreeDistribuition = d.DegreeDistribuition();
 
+
+                ErdosDistribuitionDegreeChart.Titles.Add(new Title(RandomGraphStrings.DegreeChartTitle));
+
+                GenerateDegreeDistribuitionChart(chart1, degreeDistribuition);
+            }
+            if (radioButton5.Checked)
+            {
+                //GenerateClusteringCoefficientChart(chart6, N, k);
+            }
+        }
+        private void ErdosGenerateButton_Click(object sender, EventArgs e)
+        {
+            int.TryParse(ErdosNumberOfNodesTextBox.Text, out var numberOfNodes);
+            int N = numberOfNodes;
+            double.TryParse(ErdosProbabilityTextBox.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out var probability);
+            if (radioButton1.Checked)
+            {
+
+                var model = new ErdösRenyiModel(numberOfNodes, probability);
+                if (visualize)
+                {
+                    var graphviz = new GraphvizAlgorithm<int, UndirectedEdge<int>>(model.Graph);
+
+                    string output = graphviz.Generate(new FileDotEngine(), "graph");
+
+                    ErdosGraphPictureBox.ImageLocation = @"graph.png";
+                }
+                double avg_k = (double)2 * model.getCount() / numberOfNodes; ;
+                double expected_avg_k = probability * (numberOfNodes - 1);
+                label18.Text = string.Format(@"{0}", avg_k);
+                label13.Text = string.Format(@"{0}", expected_avg_k);
+                label15.Text = string.Format(@"{0}", model.getGCC());
+                // label3.Text = string.Format(@"{0}", Metrics.ClusteringCoefficientMetric.Analyze(model, false));
+
+
+                var degreeDistribuition = model.DegreeDistribuition();
+
+                //foreach (var degree in degreeDistribuition)
+                //{
+                //  Console.WriteLine($@"{degree.Key} - {degree.Value}");
+                //}
+
+                ErdosDistribuitionDegreeChart.Titles.Add(new Title(RandomGraphStrings.DegreeChartTitle));
+
+                GenerateDegreeDistribuitionChart(ErdosDistribuitionDegreeChart, degreeDistribuition);
+            }
+            if (radioButton2.Checked)
+            {
+                GenerateCriticalPointChart(chart5, N);
+            }
+        }
         private void RunReport(Chart chart)
         {
             // Clear Chart
@@ -160,44 +231,36 @@ namespace RCp1
 
         }
 
-        private void ErdosGenerateButton_Click(object sender, EventArgs e)
+        /*private void GenerateClusteringCoefficientChart2(Chart chart, int N, int )
         {
-            int.TryParse(ErdosNumberOfNodesTextBox.Text,out var numberOfNodes);
-            int N = numberOfNodes;
-            double.TryParse(ErdosProbabilityTextBox.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out var probability);
+            int iter = 20;
+            double[] datax = new double[iter];
+            double[] datay = new double[iter];
+            chart.Series.Clear();
+            chart.Legends.Clear();
+            chart.Titles.Clear();
+            chart.ChartAreas.Clear();
+            BarabasiAlbertModel g;
+            Metrics.ClusteringCoefficientMetric m = new Metrics.ClusteringCoefficientMetric();
+            for (int i = 0; i < iter; i++)
+            {
+                //RandomGraph g = new RandomGraph(N, (double)i/iter);
+                g = new BarabasiAlbertModel(N, false, false, (double)i / iter, k);
 
-            var model = new ErdösRenyiModel(numberOfNodes, probability);
+                //ErdösRenyiModel g = new ErdösRenyiModel(N, (double)i / iter);
+                Data.RandomNetwork d = g.Generate();
 
-            var graphviz = new GraphvizAlgorithm<int, UndirectedEdge<int>>(model.Graph);
-
-            string output = graphviz.Generate(new FileDotEngine(), "graph");
-
-            ErdosGraphPictureBox.ImageLocation = @"graph.png";
-
-            double avg_k = (double)2 * model.getCount() / numberOfNodes; ;
-            double expected_avg_k =  probability * (numberOfNodes - 1);
-            label18.Text = string.Format(@"{0}", avg_k);
-            label13.Text = string.Format(@"{0}", expected_avg_k);
-            label15.Text = string.Format(@"{0}", model.getGCC());
-           // label3.Text = string.Format(@"{0}", Metrics.ClusteringCoefficientMetric.Analyze(model, false));
-
-
-            var degreeDistribuition = model.DegreeDistribuition();
-
-            //foreach (var degree in degreeDistribuition)
-            //{
-              //  Console.WriteLine($@"{degree.Key} - {degree.Value}");
-            //}
-
-            ErdosDistribuitionDegreeChart.Titles.Add(new Title(RandomGraphStrings.DegreeChartTitle));
-
-            GenerateDegreeDistribuitionChart(ErdosDistribuitionDegreeChart, degreeDistribuition);
-
-            GenerateCriticalPointChart(chart5, N);
-
-        }
-        private void GenerateClusteringCoefficientChart(Chart chart, int iter, int N, int k)
+                datay[i] = m.Analyze(d, false);
+                datax[i] = (double)i / iter;
+                Console.WriteLine("x : " + datax[i] + ", y : " + datay[i]);
+            }
+            ChartSeries(chart, datax, datay, "p = Clust. Coeff.", iter, N);
+            ChartAreas(chart, "Graph Clustering Coefficient", 1);
+            ChartTitle(chart, "");
+        }*/
+        private void GenerateClusteringCoefficientChart(Chart chart, int N, int k)
         {
+            int iter = 20;
             double[] datax = new double[iter];
             double[] datay = new double[iter];
             chart.Series.Clear();
@@ -254,7 +317,7 @@ namespace RCp1
             ChartTitle(chart, "");
         }
         private void GenerateDegreeDistribuitionChart(Chart chart,
-            Dictionary<int, int> distribuitionDegree)
+            Dictionary<int,int> distribuitionDegree)
         {
             chart.Series.Clear();
             chart.Legends.Clear();
@@ -264,12 +327,12 @@ namespace RCp1
 
             var axisX = new Axis
             {
-                Title = "Sum K"
+                Title = "K"
             };
 
             var axisY = new Axis
             {
-                Title = "K",
+                Title = "Sum K",
             };
 
             var chartArea = new ChartArea
@@ -284,16 +347,26 @@ namespace RCp1
             {
                 Name = "Name",
                 Color = Color.Blue,
-                BorderWidth = 5,
+                //BorderWidth = 5,
                 IsVisibleInLegend = true,
                 IsXValueIndexed = true,
-                ChartType = SeriesChartType.FastPoint,
+                ChartType = SeriesChartType.Line,
             };
 
-            for (int i = 0; i < distribuitionDegree.Keys.Count; i++)
+            for (int i = 0; i < distribuitionDegree.Keys.Max()+1; i++)
             {
-                var degree = distribuitionDegree.ElementAt(i);
-                serie.Points.AddXY(degree.Key,degree.Value);
+                if (distribuitionDegree.Keys.Contains<int>(i))
+                {
+                    serie.Points.AddXY(i, distribuitionDegree[i]);
+                    Console.WriteLine("x : " + i + ", y : " + distribuitionDegree[i]);
+                }
+                else
+                {
+                    serie.Points.AddXY(i, 0);
+                }
+
+                //Console.WriteLine("x : " + degree.Key + ", y : " + degree.Value);
+
             }
 
             chart.Series.Add(serie);
@@ -323,5 +396,19 @@ namespace RCp1
             chart.Series.Add(serie);
             //ChartLegends(name);
         }
+
+        private void visualizeGraphToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (visualize) {
+                visualizeGraphToolStripMenuItem.Text = "Visualize Graph";
+                visualize = false;
+            }
+            else {
+                visualizeGraphToolStripMenuItem.Text = "Dont show Graph";
+                visualize = true;
+            }
+        }
+
+
     }
 }

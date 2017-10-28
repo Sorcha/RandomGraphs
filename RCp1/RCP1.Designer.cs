@@ -29,31 +29,39 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea41 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend41 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series41 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea42 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend42 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series42 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea43 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend43 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series43 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea44 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend44 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series44 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea45 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend45 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series45 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea46 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend46 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series46 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea47 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend47 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series47 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea48 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend48 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series48 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea49 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend49 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series49 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea50 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend50 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series50 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label3 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -76,7 +84,10 @@
             this.ErdosNumberOfNodesTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -97,9 +108,27 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tabControl4 = new System.Windows.Forms.TabControl();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.chart6 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tabPage16 = new System.Windows.Forms.TabPage();
+            this.chart7 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualizeGraphToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage3.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage5.SuspendLayout();
@@ -123,6 +152,17 @@
             this.tabPage13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart4)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabControl4.SuspendLayout();
+            this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tabPage9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.tabPage15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart6)).BeginInit();
+            this.tabPage16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart7)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // imageList1
@@ -134,7 +174,6 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.radioButton2);
-            this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Controls.Add(this.label13);
             this.tabPage3.Controls.Add(this.label14);
             this.tabPage3.Controls.Add(this.label15);
@@ -151,7 +190,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(783, 425);
+            this.tabPage3.Size = new System.Drawing.Size(783, 403);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Erdös and Renyi Model";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -165,15 +204,6 @@
             this.radioButton2.TabIndex = 21;
             this.radioButton2.Text = "N Graphs";
             this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(84, 233);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "label3";
             // 
             // label13
             // 
@@ -291,17 +321,17 @@
             // ErdosDistribuitionDegreeChart
             // 
             this.ErdosDistribuitionDegreeChart.AccessibleName = "ErdosDistribuitionDegreeChart";
-            chartArea8.Name = "ChartArea1";
-            this.ErdosDistribuitionDegreeChart.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.ErdosDistribuitionDegreeChart.Legends.Add(legend8);
+            chartArea41.Name = "ChartArea1";
+            this.ErdosDistribuitionDegreeChart.ChartAreas.Add(chartArea41);
+            legend41.Name = "Legend1";
+            this.ErdosDistribuitionDegreeChart.Legends.Add(legend41);
             this.ErdosDistribuitionDegreeChart.Location = new System.Drawing.Point(16, 45);
             this.ErdosDistribuitionDegreeChart.Margin = new System.Windows.Forms.Padding(2);
             this.ErdosDistribuitionDegreeChart.Name = "ErdosDistribuitionDegreeChart";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.ErdosDistribuitionDegreeChart.Series.Add(series8);
+            series41.ChartArea = "ChartArea1";
+            series41.Legend = "Legend1";
+            series41.Name = "Series1";
+            this.ErdosDistribuitionDegreeChart.Series.Add(series41);
             this.ErdosDistribuitionDegreeChart.Size = new System.Drawing.Size(414, 329);
             this.ErdosDistribuitionDegreeChart.TabIndex = 0;
             this.ErdosDistribuitionDegreeChart.Text = "chart2";
@@ -321,17 +351,17 @@
             // ErdosClusteringChart
             // 
             this.ErdosClusteringChart.AccessibleName = "ErdosClusteringChart";
-            chartArea9.Name = "ChartArea1";
-            this.ErdosClusteringChart.ChartAreas.Add(chartArea9);
-            legend9.Name = "Legend1";
-            this.ErdosClusteringChart.Legends.Add(legend9);
+            chartArea42.Name = "ChartArea1";
+            this.ErdosClusteringChart.ChartAreas.Add(chartArea42);
+            legend42.Name = "Legend1";
+            this.ErdosClusteringChart.Legends.Add(legend42);
             this.ErdosClusteringChart.Location = new System.Drawing.Point(3, 15);
             this.ErdosClusteringChart.Margin = new System.Windows.Forms.Padding(2);
             this.ErdosClusteringChart.Name = "ErdosClusteringChart";
-            series9.ChartArea = "ChartArea1";
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            this.ErdosClusteringChart.Series.Add(series9);
+            series42.ChartArea = "ChartArea1";
+            series42.Legend = "Legend1";
+            series42.Name = "Series1";
+            this.ErdosClusteringChart.Series.Add(series42);
             this.ErdosClusteringChart.Size = new System.Drawing.Size(426, 359);
             this.ErdosClusteringChart.TabIndex = 0;
             this.ErdosClusteringChart.Text = "chart3";
@@ -351,17 +381,17 @@
             // ErdosAveragePathChart
             // 
             this.ErdosAveragePathChart.AccessibleName = "ErdosAveragePathChart";
-            chartArea10.Name = "ChartArea1";
-            this.ErdosAveragePathChart.ChartAreas.Add(chartArea10);
-            legend10.Name = "Legend1";
-            this.ErdosAveragePathChart.Legends.Add(legend10);
+            chartArea43.Name = "ChartArea1";
+            this.ErdosAveragePathChart.ChartAreas.Add(chartArea43);
+            legend43.Name = "Legend1";
+            this.ErdosAveragePathChart.Legends.Add(legend43);
             this.ErdosAveragePathChart.Location = new System.Drawing.Point(3, 15);
             this.ErdosAveragePathChart.Margin = new System.Windows.Forms.Padding(2);
             this.ErdosAveragePathChart.Name = "ErdosAveragePathChart";
-            series10.ChartArea = "ChartArea1";
-            series10.Legend = "Legend1";
-            series10.Name = "Series1";
-            this.ErdosAveragePathChart.Series.Add(series10);
+            series43.ChartArea = "ChartArea1";
+            series43.Legend = "Legend1";
+            series43.Name = "Series1";
+            this.ErdosAveragePathChart.Series.Add(series43);
             this.ErdosAveragePathChart.Size = new System.Drawing.Size(426, 366);
             this.ErdosAveragePathChart.TabIndex = 0;
             this.ErdosAveragePathChart.Text = "chart4";
@@ -380,17 +410,17 @@
             // chart5
             // 
             this.chart5.AccessibleName = "ErdosDistribuitionDegreeChart";
-            chartArea11.Name = "ChartArea1";
-            this.chart5.ChartAreas.Add(chartArea11);
-            legend11.Name = "Legend1";
-            this.chart5.Legends.Add(legend11);
+            chartArea44.Name = "ChartArea1";
+            this.chart5.ChartAreas.Add(chartArea44);
+            legend44.Name = "Legend1";
+            this.chart5.Legends.Add(legend44);
             this.chart5.Location = new System.Drawing.Point(9, 27);
             this.chart5.Margin = new System.Windows.Forms.Padding(2);
             this.chart5.Name = "chart5";
-            series11.ChartArea = "ChartArea1";
-            series11.Legend = "Legend1";
-            series11.Name = "Series1";
-            this.chart5.Series.Add(series11);
+            series44.ChartArea = "ChartArea1";
+            series44.Legend = "Legend1";
+            series44.Name = "Series1";
+            this.chart5.Series.Add(series44);
             this.chart5.Size = new System.Drawing.Size(414, 329);
             this.chart5.TabIndex = 1;
             this.chart5.Text = "chart2";
@@ -433,6 +463,19 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "Number of Nodes:";
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = global::RCp1.Properties.Settings.Default.One;
+            this.radioButton1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::RCp1.Properties.Settings.Default, "One", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.radioButton1.Location = new System.Drawing.Point(30, 287);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(77, 17);
+            this.radioButton1.TabIndex = 20;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "One Graph";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.radioButton3);
@@ -450,10 +493,33 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(783, 425);
+            this.tabPage1.Size = new System.Drawing.Size(783, 403);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Watts-Strogatz Model";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(126, 228);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(70, 17);
+            this.radioButton3.TabIndex = 23;
+            this.radioButton3.Text = "N Graphs";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Checked = global::RCp1.Properties.Settings.Default.One;
+            this.radioButton4.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::RCp1.Properties.Settings.Default, "One", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.radioButton4.Location = new System.Drawing.Point(33, 228);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(77, 17);
+            this.radioButton4.TabIndex = 22;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "One Graph";
+            this.radioButton4.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -532,17 +598,17 @@
             // chart2
             // 
             this.chart2.AccessibleName = "ErdosDistribuitionDegreeChart";
-            chartArea12.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea12);
-            legend12.Name = "Legend1";
-            this.chart2.Legends.Add(legend12);
+            chartArea45.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea45);
+            legend45.Name = "Legend1";
+            this.chart2.Legends.Add(legend45);
             this.chart2.Location = new System.Drawing.Point(16, 45);
             this.chart2.Margin = new System.Windows.Forms.Padding(2);
             this.chart2.Name = "chart2";
-            series12.ChartArea = "ChartArea1";
-            series12.Legend = "Legend1";
-            series12.Name = "Series1";
-            this.chart2.Series.Add(series12);
+            series45.ChartArea = "ChartArea1";
+            series45.Legend = "Legend1";
+            series45.Name = "Series1";
+            this.chart2.Series.Add(series45);
             this.chart2.Size = new System.Drawing.Size(414, 329);
             this.chart2.TabIndex = 0;
             this.chart2.Text = "chart2";
@@ -562,17 +628,17 @@
             // chart3
             // 
             this.chart3.AccessibleName = "ErdosClusteringChart";
-            chartArea13.Name = "ChartArea1";
-            this.chart3.ChartAreas.Add(chartArea13);
-            legend13.Name = "Legend1";
-            this.chart3.Legends.Add(legend13);
+            chartArea46.Name = "ChartArea1";
+            this.chart3.ChartAreas.Add(chartArea46);
+            legend46.Name = "Legend1";
+            this.chart3.Legends.Add(legend46);
             this.chart3.Location = new System.Drawing.Point(3, 15);
             this.chart3.Margin = new System.Windows.Forms.Padding(2);
             this.chart3.Name = "chart3";
-            series13.ChartArea = "ChartArea1";
-            series13.Legend = "Legend1";
-            series13.Name = "Series1";
-            this.chart3.Series.Add(series13);
+            series46.ChartArea = "ChartArea1";
+            series46.Legend = "Legend1";
+            series46.Name = "Series1";
+            this.chart3.Series.Add(series46);
             this.chart3.Size = new System.Drawing.Size(426, 359);
             this.chart3.TabIndex = 0;
             this.chart3.Text = "chart3";
@@ -592,17 +658,17 @@
             // chart4
             // 
             this.chart4.AccessibleName = "ErdosAveragePathChart";
-            chartArea14.Name = "ChartArea1";
-            this.chart4.ChartAreas.Add(chartArea14);
-            legend14.Name = "Legend1";
-            this.chart4.Legends.Add(legend14);
+            chartArea47.Name = "ChartArea1";
+            this.chart4.ChartAreas.Add(chartArea47);
+            legend47.Name = "Legend1";
+            this.chart4.Legends.Add(legend47);
             this.chart4.Location = new System.Drawing.Point(3, 15);
             this.chart4.Margin = new System.Windows.Forms.Padding(2);
             this.chart4.Name = "chart4";
-            series14.ChartArea = "ChartArea1";
-            series14.Legend = "Legend1";
-            series14.Name = "Series1";
-            this.chart4.Series.Add(series14);
+            series47.ChartArea = "ChartArea1";
+            series47.Legend = "Legend1";
+            series47.Name = "Series1";
+            this.chart4.Series.Add(series47);
             this.chart4.Size = new System.Drawing.Size(426, 366);
             this.chart4.TabIndex = 0;
             this.chart4.Text = "chart4";
@@ -661,57 +727,263 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(0, 1);
+            this.tabControl1.Location = new System.Drawing.Point(0, 23);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(791, 451);
+            this.tabControl1.Size = new System.Drawing.Size(791, 429);
             this.tabControl1.TabIndex = 9;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.radioButton5);
+            this.tabPage2.Controls.Add(this.radioButton6);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.textBox3);
+            this.tabPage2.Controls.Add(this.textBox4);
+            this.tabPage2.Controls.Add(this.textBox6);
+            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.tabControl4);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(783, 425);
+            this.tabPage2.Size = new System.Drawing.Size(783, 403);
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "Barabasi Albert Model";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // radioButton5
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(126, 228);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(70, 17);
-            this.radioButton3.TabIndex = 23;
-            this.radioButton3.Text = "N Graphs";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(136, 217);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(70, 17);
+            this.radioButton5.TabIndex = 25;
+            this.radioButton5.Text = "N Graphs";
+            this.radioButton5.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // radioButton6
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Checked = global::RCp1.Properties.Settings.Default.One;
-            this.radioButton4.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::RCp1.Properties.Settings.Default, "One", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.radioButton4.Location = new System.Drawing.Point(33, 228);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(77, 17);
-            this.radioButton4.TabIndex = 22;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "One Graph";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Checked = global::RCp1.Properties.Settings.Default.One;
+            this.radioButton6.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::RCp1.Properties.Settings.Default, "One", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.radioButton6.Location = new System.Drawing.Point(43, 217);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(77, 17);
+            this.radioButton6.TabIndex = 24;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "One Graph";
+            this.radioButton6.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // label6
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = global::RCp1.Properties.Settings.Default.One;
-            this.radioButton1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::RCp1.Properties.Settings.Default, "One", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.radioButton1.Location = new System.Drawing.Point(30, 287);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(77, 17);
-            this.radioButton1.TabIndex = 20;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "One Graph";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(2, 86);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 13);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Edges to Add:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(82, 83);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 21;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(82, 29);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 17;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(82, 57);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.TabIndex = 18;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(82, 126);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(90, 36);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Generate";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(35, 32);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Nodes:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(19, 60);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(57, 13);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Nodes init:";
+            // 
+            // tabControl4
+            // 
+            this.tabControl4.Controls.Add(this.tabPage8);
+            this.tabControl4.Controls.Add(this.tabPage9);
+            this.tabControl4.Controls.Add(this.tabPage15);
+            this.tabControl4.Controls.Add(this.tabPage16);
+            this.tabControl4.Location = new System.Drawing.Point(303, 7);
+            this.tabControl4.Margin = new System.Windows.Forms.Padding(2);
+            this.tabControl4.Name = "tabControl4";
+            this.tabControl4.SelectedIndex = 0;
+            this.tabControl4.Size = new System.Drawing.Size(440, 408);
+            this.tabControl4.TabIndex = 15;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.pictureBox2);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage8.Size = new System.Drawing.Size(432, 382);
+            this.tabPage8.TabIndex = 1;
+            this.tabPage8.Text = "Graph";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.AccessibleName = "ErdosGraphPictureBox";
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(432, 383);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Controls.Add(this.chart1);
+            this.tabPage9.Location = new System.Drawing.Point(4, 22);
+            this.tabPage9.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage9.Size = new System.Drawing.Size(432, 382);
+            this.tabPage9.TabIndex = 2;
+            this.tabPage9.Text = "Degree Distribuition";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // chart1
+            // 
+            this.chart1.AccessibleName = "ErdosDistribuitionDegreeChart";
+            chartArea48.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea48);
+            legend48.Name = "Legend1";
+            this.chart1.Legends.Add(legend48);
+            this.chart1.Location = new System.Drawing.Point(16, 45);
+            this.chart1.Margin = new System.Windows.Forms.Padding(2);
+            this.chart1.Name = "chart1";
+            series48.ChartArea = "ChartArea1";
+            series48.Legend = "Legend1";
+            series48.Name = "Series1";
+            this.chart1.Series.Add(series48);
+            this.chart1.Size = new System.Drawing.Size(414, 329);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            // 
+            // tabPage15
+            // 
+            this.tabPage15.Controls.Add(this.chart6);
+            this.tabPage15.Location = new System.Drawing.Point(4, 22);
+            this.tabPage15.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage15.Name = "tabPage15";
+            this.tabPage15.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage15.Size = new System.Drawing.Size(432, 382);
+            this.tabPage15.TabIndex = 3;
+            this.tabPage15.Text = "Clustering";
+            this.tabPage15.UseVisualStyleBackColor = true;
+            // 
+            // chart6
+            // 
+            this.chart6.AccessibleName = "ErdosClusteringChart";
+            chartArea49.Name = "ChartArea1";
+            this.chart6.ChartAreas.Add(chartArea49);
+            legend49.Name = "Legend1";
+            this.chart6.Legends.Add(legend49);
+            this.chart6.Location = new System.Drawing.Point(3, 15);
+            this.chart6.Margin = new System.Windows.Forms.Padding(2);
+            this.chart6.Name = "chart6";
+            series49.ChartArea = "ChartArea1";
+            series49.Legend = "Legend1";
+            series49.Name = "Series1";
+            this.chart6.Series.Add(series49);
+            this.chart6.Size = new System.Drawing.Size(426, 359);
+            this.chart6.TabIndex = 0;
+            this.chart6.Text = "chart6";
+            // 
+            // tabPage16
+            // 
+            this.tabPage16.Controls.Add(this.chart7);
+            this.tabPage16.Location = new System.Drawing.Point(4, 22);
+            this.tabPage16.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage16.Name = "tabPage16";
+            this.tabPage16.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage16.Size = new System.Drawing.Size(432, 382);
+            this.tabPage16.TabIndex = 4;
+            this.tabPage16.Text = "Average Path Lenght";
+            this.tabPage16.UseVisualStyleBackColor = true;
+            // 
+            // chart7
+            // 
+            this.chart7.AccessibleName = "ErdosAveragePathChart";
+            chartArea50.Name = "ChartArea1";
+            this.chart7.ChartAreas.Add(chartArea50);
+            legend50.Name = "Legend1";
+            this.chart7.Legends.Add(legend50);
+            this.chart7.Location = new System.Drawing.Point(3, 15);
+            this.chart7.Margin = new System.Windows.Forms.Padding(2);
+            this.chart7.Name = "chart7";
+            series50.ChartArea = "ChartArea1";
+            series50.Legend = "Legend1";
+            series50.Name = "Series1";
+            this.chart7.Series.Add(series50);
+            this.chart7.Size = new System.Drawing.Size(426, 366);
+            this.chart7.TabIndex = 0;
+            this.chart7.Text = "chart7";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(790, 24);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.visualizeGraphToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // visualizeGraphToolStripMenuItem
+            // 
+            this.visualizeGraphToolStripMenuItem.Name = "visualizeGraphToolStripMenuItem";
+            this.visualizeGraphToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.visualizeGraphToolStripMenuItem.Text = "Dont show Graph";
+            this.visualizeGraphToolStripMenuItem.Click += new System.EventHandler(this.visualizeGraphToolStripMenuItem_Click);
             // 
             // RCP1
             // 
@@ -719,6 +991,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 449);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "RCP1";
             this.Text = "RCP1";
             this.tabPage3.ResumeLayout(false);
@@ -746,7 +1020,21 @@
             this.tabPage13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart4)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.tabControl4.ResumeLayout(false);
+            this.tabPage8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tabPage9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.tabPage15.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart6)).EndInit();
+            this.tabPage16.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart7)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -793,7 +1081,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TabPage tabPage2;
@@ -801,5 +1088,26 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.TabControl tabControl4;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.TabPage tabPage15;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart6;
+        private System.Windows.Forms.TabPage tabPage16;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart7;
+        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem visualizeGraphToolStripMenuItem;
     }
 }

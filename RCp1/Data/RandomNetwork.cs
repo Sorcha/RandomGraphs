@@ -40,25 +40,15 @@ namespace RCp1.Data
             _edgeDictionary = new Dictionary<int, UndirectedEdge<int>>();
 
         }
-        public Dictionary<int, int> DegreeDistribuition()
+        public Dictionary<int,int> DegreeDistribuition()
         {
-            var distribuitionDegree = new Dictionary<int, int>();
-            foreach (var vertice in MGraph.Vertices)
-            {
-                int degree = MGraph.AdjacentDegree(vertice);
-
-                if (distribuitionDegree.ContainsKey(degree))
-                {
-                    distribuitionDegree[degree] += 1;
-
-                }
-                else
-                {
-                    distribuitionDegree.Add(degree, 1);
-                }
-            }
-
-            return distribuitionDegree;
+            Metrics.DegreeDistributionMetric m = new Metrics.DegreeDistributionMetric();
+            return m.Analyze(this);
+        }
+        public double ClusteringCoefficient()
+        {
+            Metrics.ClusteringCoefficientMetric m = new Metrics.ClusteringCoefficientMetric();
+            return m.Analyze(this, false);
         }
         public int getGCC()
         {

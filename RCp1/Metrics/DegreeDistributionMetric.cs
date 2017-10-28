@@ -39,13 +39,16 @@ namespace RCp1.Metrics
 
             return LeastSquares(degree)[0];
         }
-
         public Dictionary<int, int> Analyze(RandomNetwork network)
         {
             var distribuitionDegree = new Dictionary<int, int>();
+            int max_degree = 0;
+
             foreach (var vertice in network.Nodes())
             {
                 int degree = network.MGraph.AdjacentDegree(vertice);
+                Console.WriteLine(degree);
+                max_degree += degree;
 
                 if (distribuitionDegree.ContainsKey(degree))
                 {

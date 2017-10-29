@@ -16,7 +16,8 @@ namespace RCp1
     {
         static void Main(string[] args)
         {
-            testWattsStrogatzModelClust();
+            //testWattsStrogatzModel();
+            testBaModel();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new RCP1());
@@ -78,16 +79,16 @@ namespace RCp1
         public static void testWattsStrogatzModel()
         {
 
-            int nodes = 100;
-            double beta = 0.07;
+            int nodes = 10000;
+            double beta = 0.7;
             int degree = 4;
             bool allowReflexive = false;
             bool directed = false;
 
-            WattsStrogatzModel wsm = new WattsStrogatzModel(nodes, allowReflexive, directed, beta, degree);
-            RandomNetwork random_network = wsm.Generate();
+            ErdösRenyiModel wsm = new ErdösRenyiModel(nodes,beta);
+            
             DegreeDistributionMetric metric = new DegreeDistributionMetric();
-            var dddegree = metric.Analyze(random_network);
+            var dddegree = wsm.DegreeDistribuition();
 
             foreach (var d in dddegree)
             {
@@ -100,6 +101,34 @@ namespace RCp1
             int edges = 2 * degree * nodes;
 
             
+
+        }
+
+        public static void testBaModel()
+        {
+
+            int nodes = 1000;
+            double beta = 0.7;
+            int degree = 4;
+            bool allowReflexive = false;
+            bool directed = false;
+
+            BarabasiAlbertModel wsm = new BarabasiAlbertModel(nodes,allowReflexive,directed,3,5);
+            var net = wsm.Generate();
+            DegreeDistributionMetric metric = new DegreeDistributionMetric();
+            var dddegree = metric.Analyze(net);
+
+            foreach (var d in dddegree)
+            {
+                Console.WriteLine(string.Format("{0};{1}", d.Key, d.Value));
+            }
+
+            //var graphviz = new GraphvizAlgorithm<int, UndirectedEdge<int>>(random_network.MGraph);
+            //string output = graphviz.Generate(new FileDotEngine(), "graph");
+
+            int edges = 2 * degree * nodes;
+
+
 
         }
 

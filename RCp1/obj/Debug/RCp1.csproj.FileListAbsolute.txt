@@ -33,4 +33,3 @@ X:\School\IST\Redes Complexas\RCp1\obj\Debug\RCp1.csproj.GenerateResource.Cache
 X:\School\IST\Redes Complexas\RCp1\obj\Debug\RCp1.csproj.CoreCompileInputs.cache
 X:\School\IST\Redes Complexas\RCp1\obj\Debug\RCp1.exe
 X:\School\IST\Redes Complexas\RCp1\obj\Debug\RCp1.pdb
-X:\School\IST\Redes Complexas\RCp1\obj\Debug\RCp1.csprojResolveAssemblyReference.cache

@@ -24,21 +24,11 @@ namespace RCp1.Models
         }
 
    
-        public override IRandomNetworkGenerator Copy()
-        {
-            return new WattsStrogatzModel(NumNodes, AllowSelfEdge, Directed, _beta, _degree);
-        }
-
-        public override string GetName()
-        {
-            return "Watts-Strogatz Model";
-        }
-
+     
         public override RandomNetwork Generate()
         {
             
             RandomNetwork randomNetwork = new RandomNetwork(Directed);
-            randomNetwork.SetTitle(GetName());
             NumEdges = 0;
             
             int[] nodes = new int[NumNodes];

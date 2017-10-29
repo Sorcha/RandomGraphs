@@ -26,19 +26,14 @@ namespace RCp1.Models
             _edgesToAdd = pEdgesToAdd;
         }
 
-        public override string GetName()
-        {
-            return "Barabasi-Albert Model";
-        }
-
+     
 
        
         public override RandomNetwork Generate()
         {
 
             RandomNetwork randomNetwork = new RandomNetwork(Directed);
-
-            randomNetwork.SetTitle(GetName());
+            
 
             long time = DateTime.UtcNow.Millisecond;
 

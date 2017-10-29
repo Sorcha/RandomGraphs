@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RCp1.Data;
+using RCp1.Models;
 
 namespace RCp1.Metrics
 {
@@ -47,6 +48,31 @@ namespace RCp1.Metrics
             foreach (var vertice in network.Nodes())
             {
                 int degree = network.MGraph.AdjacentDegree(vertice);
+                Console.WriteLine(degree);
+                max_degree += degree;
+
+                if (distribuitionDegree.ContainsKey(degree))
+                {
+                    distribuitionDegree[degree] += 1;
+
+                }
+                else
+                {
+                    distribuitionDegree.Add(degree, 1);
+                }
+            }
+
+            return distribuitionDegree;
+        }
+        
+        public Dictionary<int, int> Analyze(RandomModelBase graph)
+        {
+            var distribuitionDegree = new Dictionary<int, int>();
+            int max_degree = 0;
+
+            foreach (var vertice in graph.Graph.Vertices)
+            {
+                int degree = graph.Graph.AdjacentDegree(vertice);
                 Console.WriteLine(degree);
                 max_degree += degree;
 

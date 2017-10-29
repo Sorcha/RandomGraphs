@@ -43,29 +43,6 @@ namespace RCp1.Models
             }
         }
 
-        public Dictionary<int, int> Analyze()
-        {
-            var distribuitionDegree = new Dictionary<int, int>();
-            int max_degree = 0;
-
-            foreach (var vertice in Graph.Vertices)
-            {
-                int degree = Graph.AdjacentDegree(vertice);
-                Console.WriteLine(degree);
-                max_degree += degree;
-
-                if (distribuitionDegree.ContainsKey(degree))
-                {
-                    distribuitionDegree[degree] += 1;
-
-                }
-                else
-                {
-                    distribuitionDegree.Add(degree, 1);
-                }
-            }
-
-            return distribuitionDegree;
-        }
+       
     }
 }

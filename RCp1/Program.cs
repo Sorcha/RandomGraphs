@@ -90,10 +90,10 @@ namespace RCp1
             DegreeDistributionMetric metric = new DegreeDistributionMetric();
             var dddegree = wsm.DegreeDistribuition();
 
-            foreach (var d in dddegree)
+           /* foreach (var d in dddegree)
             {
                 Console.WriteLine(string.Format("{0};{1}",d.Key,d.Value));
-            }
+            }*/
 
             //var graphviz = new GraphvizAlgorithm<int, UndirectedEdge<int>>(random_network.MGraph);
             //string output = graphviz.Generate(new FileDotEngine(), "graph");

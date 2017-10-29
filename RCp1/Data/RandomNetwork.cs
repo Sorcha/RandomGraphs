@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using QuickGraph;
+using QuickGraph.Algorithms.ConnectedComponents;
 
 namespace RCp1.Data
 {
@@ -39,7 +40,42 @@ namespace RCp1.Data
             _edgeDictionary = new Dictionary<int, UndirectedEdge<int>>();
 
         }
+        public Dictionary<int,int> DegreeDistribuition()
+        {
+            Metrics.DegreeDistributionMetric m = new Metrics.DegreeDistributionMetric();
+            return m.Analyze(this);
+        }
+        public double ClusteringCoefficient()
+        {
+            Metrics.ClusteringCoefficientMetric m = new Metrics.ClusteringCoefficientMetric();
+            return m.Analyze(this, false);
+        }
+        public int getGCC()
+        {
+            int max = 0;
+            int[] maxs;
+            var x = new ConnectedComponentsAlgorithm<int, UndirectedEdge<int>>(MGraph);
+            x.Compute();
+            maxs = new int[x.ComponentCount];
+            IEnumerator<KeyValuePair<int, int>> enumerator = x.Components.GetEnumerator();
+            //Console.WriteLine("Value : " + enumerator.Current.Value);
+            //maxs[enumerator.Current.Value]++;
 
+            while (enumerator.MoveNext())
+            {
+                //Console.WriteLine("Value : " + enumerator.Current.Value);
+                maxs[enumerator.Current.Value]++;
+            }
+            for (int i = 0; i < x.ComponentCount; i++)
+            {
+                if (maxs[i] > max)
+                {
+                    max = maxs[i];
+                }
+            }
+
+            return max;
+        }
         public List<int> Nodes()
         {
             return MGraph.Vertices.ToList();

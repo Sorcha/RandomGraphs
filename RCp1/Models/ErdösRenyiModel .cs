@@ -15,6 +15,9 @@ namespace RCp1.Models
 
             _probability = probability;
             MaxEdges = numberOfNodes * (numberOfNodes - 1) / 2;
+            var edges = MaxEdges * probability;
+            MaxEdges = (long) edges;
+           // Console.WriteLine(edges);
             for (int i = 1; i <= NumberOfNodes; i++)
             {
                 Graph.AddVertex(i);

@@ -38,7 +38,6 @@ namespace RCp1.Models
         {
             
             RandomNetwork randomNetwork = new RandomNetwork(Directed);
-
             randomNetwork.SetTitle(GetName());
             NumEdges = 0;
             

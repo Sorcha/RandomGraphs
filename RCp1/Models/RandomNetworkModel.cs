@@ -61,9 +61,5 @@ namespace RCp1.Models
         }
 
         public abstract RandomNetwork Generate();
-
-        public abstract string GetName();
-
-        public abstract IRandomNetworkGenerator Copy();
     }
 }

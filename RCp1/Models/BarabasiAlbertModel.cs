@@ -26,12 +26,6 @@ namespace RCp1.Models
             _edgesToAdd = pEdgesToAdd;
         }
 
-        public override IRandomNetworkGenerator Copy()
-        {
-            return new BarabasiAlbertModel(NumNodes, AllowSelfEdge, Directed, _initNumNodes, _edgesToAdd);
-        }
-
-
         public override string GetName()
         {
             return "Barabasi-Albert Model";

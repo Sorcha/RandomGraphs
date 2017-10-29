@@ -112,11 +112,6 @@ namespace RCp1
 
                 var degreeDistribuition = model.DegreeDistribuition();
 
-                //foreach (var degree in degreeDistribuition)
-                //{
-                //  Console.WriteLine($@"{degree.Key} - {degree.Value}");
-                //}
-
                 ErdosDistribuitionDegreeChart.Titles.Add(new Title(RandomGraphStrings.DegreeChartTitle));
 
                 GenerateDegreeDistribuitionChart(ErdosDistribuitionDegreeChart, degreeDistribuition);
@@ -231,33 +226,6 @@ namespace RCp1
 
         }
 
-        /*private void GenerateClusteringCoefficientChart2(Chart chart, int N, int )
-        {
-            int iter = 20;
-            double[] datax = new double[iter];
-            double[] datay = new double[iter];
-            chart.Series.Clear();
-            chart.Legends.Clear();
-            chart.Titles.Clear();
-            chart.ChartAreas.Clear();
-            BarabasiAlbertModel g;
-            Metrics.ClusteringCoefficientMetric m = new Metrics.ClusteringCoefficientMetric();
-            for (int i = 0; i < iter; i++)
-            {
-                //RandomGraph g = new RandomGraph(N, (double)i/iter);
-                g = new BarabasiAlbertModel(N, false, false, (double)i / iter, k);
-
-                //ErdösRenyiModel g = new ErdösRenyiModel(N, (double)i / iter);
-                Data.RandomNetwork d = g.Generate();
-
-                datay[i] = m.Analyze(d, false);
-                datax[i] = (double)i / iter;
-                Console.WriteLine("x : " + datax[i] + ", y : " + datay[i]);
-            }
-            ChartSeries(chart, datax, datay, "p = Clust. Coeff.", iter, N);
-            ChartAreas(chart, "Graph Clustering Coefficient", 1);
-            ChartTitle(chart, "");
-        }*/
         private void GenerateClusteringCoefficientChart(Chart chart, int N, int k)
         {
             int iter = 20;

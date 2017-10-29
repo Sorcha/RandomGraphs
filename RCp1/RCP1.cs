@@ -213,7 +213,7 @@ namespace RCp1
                 //BorderWidth = 5,
                 IsVisibleInLegend = true,
                 IsXValueIndexed = true,
-                ChartType = SeriesChartType.Line,
+                ChartType = SeriesChartType.Point,
             };
 
             for (int i = 0; i < iter; i++)
@@ -350,7 +350,7 @@ namespace RCp1
                 //BorderWidth = 5,
                 IsVisibleInLegend = true,
                 IsXValueIndexed = true,
-                ChartType = SeriesChartType.Line,
+                ChartType = SeriesChartType.Point,
             };
 
             for (int i = 0; i < distribuitionDegree.Keys.Max()+1; i++)

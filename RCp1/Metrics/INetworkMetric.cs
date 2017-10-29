@@ -7,10 +7,5 @@ namespace RCp1.Metrics
 
         double Analyze(RandomNetwork pNetwork, bool pDirected);
 
-        string GetDisplayName();
-
-
-        INetworkMetric Copy();
-
     }
 }

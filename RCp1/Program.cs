@@ -17,7 +17,7 @@ namespace RCp1
         static void Main(string[] args)
         {
             //testWattsStrogatzModel();
-            testBaModel();
+            //testBaModel();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new RCP1());

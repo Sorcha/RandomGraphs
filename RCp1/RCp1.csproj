@@ -63,6 +63,7 @@
     <Compile Include="Data\RandomNetwork.cs" />
     <Compile Include="FileDotEngine.cs" />
     <Compile Include="Metrics\AverageDegreeMetric.cs" />
+    <Compile Include="Metrics\AveragePathLenghtMetric.cs" />
     <Compile Include="Metrics\ClusteringCoefficientMetric.cs" />
     <Compile Include="Metrics\DegreeDistributionMetric.cs" />
     <Compile Include="Metrics\INetworkMetric.cs" />

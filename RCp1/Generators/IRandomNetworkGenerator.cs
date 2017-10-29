@@ -6,10 +6,6 @@ namespace RCp1.Generators
     {
 
         RandomNetwork Generate();
-
-        string GetName();
-
-
-        IRandomNetworkGenerator Copy();
+        
     }
 }

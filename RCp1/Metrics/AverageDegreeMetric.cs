@@ -9,16 +9,6 @@ namespace RCp1.Metrics
 {
     public class AverageDegreeMetric : INetworkMetric
     {
- 
-        public string GetDisplayName()
-        {
-            return "Average Degree";
-        }
-
-        public  INetworkMetric Copy()
-        {
-            return new AverageDegreeMetric();
-        }
 
         public double Analyze(RandomNetwork pNetwork, bool pDirected)
         {

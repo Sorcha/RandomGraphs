@@ -54,6 +54,7 @@ namespace RCp1
             }
             if (radioButton3.Checked)
             {
+                GenerateAveragePathLengthWattsChart(chart4, N, k);
                 GenerateClusteringCoefficientChart(chart3, N, k);
             }
         }
@@ -82,7 +83,8 @@ namespace RCp1
             }
             if (radioButton5.Checked)
             {
-                //GenerateClusteringCoefficientChart(chart6, N, k);
+                GenerateAveragePathLengthBarabasiChart(chart7, N, N_init, E);
+                GenerateClusteringCoefficientChartBarabasi(chart6, N, N_init, E);
             }
         }
         private void ErdosGenerateButton_Click(object sender, EventArgs e)
@@ -112,6 +114,11 @@ namespace RCp1
 
                 var degreeDistribuition = model.DegreeDistribuition();
 
+                //foreach (var degree in degreeDistribuition)
+                //{
+                //  Console.WriteLine($@"{degree.Key} - {degree.Value}");
+                //}
+
                 ErdosDistribuitionDegreeChart.Titles.Add(new Title(RandomGraphStrings.DegreeChartTitle));
 
                 GenerateDegreeDistribuitionChart(ErdosDistribuitionDegreeChart, degreeDistribuition);
@@ -138,7 +145,7 @@ namespace RCp1
         /// Sets up the look and style of the chart, Areas.
         /// </summary>
         /// <param name="title">Title of the chart.</param>
-        private void ChartAreas(Chart chart, string title, int xmax)
+        private void ChartAreas(Chart chart, string title, double ymax)
         {
             var axisX = new Axis
             {
@@ -150,7 +157,7 @@ namespace RCp1
             var axisY = new Axis
             {
                 Minimum = 0,
-                Maximum = 1,
+                Maximum = ymax,
                 Title = title,
             };
  
@@ -226,6 +233,33 @@ namespace RCp1
 
         }
 
+        private void GenerateClusteringCoefficientChartBarabasi(Chart chart, int N, int Ninit , int Edges)
+        {
+            int iter = 20;
+            int portion = Edges;
+            double[] datax = new double[iter];
+            double[] datay = new double[iter];
+            chart.Series.Clear();
+            chart.Legends.Clear();
+            chart.Titles.Clear();
+            chart.ChartAreas.Clear();
+            BarabasiAlbertModel g;
+            for (int i = 0; i < iter; i++)
+            {
+                //RandomGraph g = new RandomGraph(N, (double)i/iter);
+                g = new BarabasiAlbertModel(N, false, false, Ninit , Edges*i);
+
+                //ErdösRenyiModel g = new ErdösRenyiModel(N, (double)i / iter);
+                Data.RandomNetwork d = g.Generate();
+
+                datay[i] = d.ClusteringCoefficient();
+                datax[i] = (double)i / iter;
+                //Console.WriteLine("x : " + datax[i] + ", y : " + datay[i]);
+            }
+            ChartSeries(chart, datax, datay, "p = Clust. Coeff.", iter, N);
+            ChartAreas(chart, "Graph Clustering Coefficient", 1);
+            ChartTitle(chart, "");
+        }
         private void GenerateClusteringCoefficientChart(Chart chart, int N, int k)
         {
             int iter = 20;
@@ -236,7 +270,6 @@ namespace RCp1
             chart.Titles.Clear();
             chart.ChartAreas.Clear();
             WattsStrogatzModel g;
-            Metrics.ClusteringCoefficientMetric m = new Metrics.ClusteringCoefficientMetric();
             for (int i = 0; i < iter; i++)
             {
                 //RandomGraph g = new RandomGraph(N, (double)i/iter);
@@ -244,10 +277,10 @@ namespace RCp1
 
                 //ErdösRenyiModel g = new ErdösRenyiModel(N, (double)i / iter);
                 Data.RandomNetwork d = g.Generate();
-
-                datay[i] = m.Analyze(d, false);
+                
+                datay[i] = d.ClusteringCoefficient();
                 datax[i] =(double) i / iter;
-                Console.WriteLine("x : " + datax[i] + ", y : "+ datay[i]);
+                //Console.WriteLine("x : " + datax[i] + ", y : "+ datay[i]);
             }
             ChartSeries(chart, datax, datay, "p = Clust. Coeff.", iter, N);
             ChartAreas(chart, "Graph Clustering Coefficient", 1);
@@ -274,14 +307,60 @@ namespace RCp1
                     break;
                 }
                 datay[i] = (double)g.getGCC() / N;
-                //datax[i] = (double) i / iter;
                 datax[i] = (double)2 * g.getCount() / N;
-                Console.WriteLine("iter : " + i);
-                //Console.WriteLine("x : " + datax[i] + ", y : " + datay[i]);
-
             }
             ChartSeries(chart, datax, datay, "<k> = Ng/N", iter, N);
             ChartAreas(chart, "Ng/N",5);
+            ChartTitle(chart, "");
+        }
+        private void GenerateAveragePathLengthWattsChart(Chart chart, int N, int k)
+        {
+            int iter = 20;
+            double max = 0;
+            double[] datax = new double[iter];
+            double[] datay = new double[iter];
+            chart.Series.Clear();
+            chart.Legends.Clear();
+            chart.Titles.Clear();
+            chart.ChartAreas.Clear();
+            WattsStrogatzModel g;
+            for (int i = 0; i < iter; i++)
+            {
+                g = new WattsStrogatzModel(N, false, false, (double)i / iter, k);
+
+                Data.RandomNetwork d = g.Generate();
+                datay[i] = d.AveragePathLength();
+                datax[i] = (double)i / iter;
+                if (datay[i] > max) max = datay[i];
+                Console.WriteLine("x : " + datax[i] + ", y : " + datay[i]);
+            }
+            ChartSeries(chart, datax, datay, "p = Avg Path Len", iter, N);
+            ChartAreas(chart, "Graph Avg Path Length", max);
+            ChartTitle(chart, "");
+        }
+        private void GenerateAveragePathLengthBarabasiChart(Chart chart, int N, int Ninit, int Edges)
+        {
+            int iter = 20;
+            double max = 0;
+            double[] datax = new double[iter];
+            double[] datay = new double[iter];
+            chart.Series.Clear();
+            chart.Legends.Clear();
+            chart.Titles.Clear();
+            chart.ChartAreas.Clear();
+            BarabasiAlbertModel g;
+            for (int i = 0; i < iter; i++)
+            {
+                g = new BarabasiAlbertModel(N, false, false, Ninit, Edges * i);
+
+                Data.RandomNetwork d = g.Generate();
+                datay[i] = d.AveragePathLength();
+                datax[i] = (double)i / iter;
+                if (datay[i] > max) max = datay[i];
+                Console.WriteLine("x : " + datax[i] + ", y : " + datay[i]);
+            }
+            ChartSeries(chart, datax, datay, "p = Avg Path Len", iter, N);
+            ChartAreas(chart, "Graph Avg Path Length", max);
             ChartTitle(chart, "");
         }
         private void GenerateDegreeDistribuitionChart(Chart chart,
@@ -326,7 +405,7 @@ namespace RCp1
                 if (distribuitionDegree.Keys.Contains<int>(i))
                 {
                     serie.Points.AddXY(i, distribuitionDegree[i]);
-                    Console.WriteLine("x : " + i + ", y : " + distribuitionDegree[i]);
+                    //Console.WriteLine("x : " + i + ", y : " + distribuitionDegree[i]);
                 }
                 else
                 {

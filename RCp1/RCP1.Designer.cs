@@ -466,8 +466,6 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            //this.radioButton1.Checked = global::RCp1.Properties.Settings.Default.One;
-            //this.radioButton1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::RCp1.Properties.Settings.Default, "One", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.radioButton1.Location = new System.Drawing.Point(30, 287);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(77, 17);
@@ -511,8 +509,6 @@
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            //this.radioButton4.Checked = global::RCp1.Properties.Settings.Default.One;
-            //this.radioButton4.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::RCp1.Properties.Settings.Default, "One", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.radioButton4.Location = new System.Drawing.Point(33, 228);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(77, 17);
@@ -766,8 +762,6 @@
             // radioButton6
             // 
             this.radioButton6.AutoSize = true;
-            //this.radioButton6.Checked = global::RCp1.Properties.Settings.Default.One;
-            //this.radioButton6.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::RCp1.Properties.Settings.Default, "One", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.radioButton6.Location = new System.Drawing.Point(43, 217);
             this.radioButton6.Name = "radioButton6";
             this.radioButton6.Size = new System.Drawing.Size(77, 17);

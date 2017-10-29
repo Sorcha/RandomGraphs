@@ -50,6 +50,11 @@ namespace RCp1.Data
             Metrics.ClusteringCoefficientMetric m = new Metrics.ClusteringCoefficientMetric();
             return m.Analyze(this, false);
         }
+        public double AveragePathLength()
+        {
+            Metrics.AveragePathLenghtMetric m = new Metrics.AveragePathLenghtMetric();
+            return m.Analyze(this, false);
+        }
         public int getGCC()
         {
             int max = 0;

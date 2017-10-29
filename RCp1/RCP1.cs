@@ -126,6 +126,8 @@ namespace RCp1
             if (radioButton2.Checked)
             {
                 GenerateCriticalPointChart(chart5, N);
+                //GenerateAveragePathLengthErdosChart(chart7, N, N_init, E);
+                GenerateClusteringCoefficientErdosChart(ErdosClusteringChart, N);
             }
         }
         private void RunReport(Chart chart)
@@ -311,6 +313,30 @@ namespace RCp1
             }
             ChartSeries(chart, datax, datay, "<k> = Ng/N", iter, N);
             ChartAreas(chart, "Ng/N",5);
+            ChartTitle(chart, "");
+        }
+        private void GenerateClusteringCoefficientErdosChart(Chart chart, int N)
+        {
+            int iter = 20;
+            double max = 0;
+            double[] datax = new double[iter];
+            double[] datay = new double[iter];
+            chart.Series.Clear();
+            chart.Legends.Clear();
+            chart.Titles.Clear();
+            chart.ChartAreas.Clear();
+            ErdösRenyiModel g;
+            for (int i = 0; i < iter; i++)
+            {
+                g = new ErdösRenyiModel(N, (double)i / iter);
+
+                datay[i] = g.ClusteringCoefficient();
+                datax[i] = (double)i / iter;
+                if (datay[i] > max) max = datay[i];
+                Console.WriteLine("x : " + datax[i] + ", y : " + datay[i]);
+            }
+            ChartSeries(chart, datax, datay, "p = Avg Path Len", iter, N);
+            ChartAreas(chart, "Graph Avg Path Length", max);
             ChartTitle(chart, "");
         }
         private void GenerateAveragePathLengthWattsChart(Chart chart, int N, int k)

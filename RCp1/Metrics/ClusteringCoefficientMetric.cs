@@ -5,22 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using QuickGraph;
 using RCp1.Data;
+using RCp1.Models;
 
 namespace RCp1.Metrics
 {
     public class ClusteringCoefficientMetric : INetworkMetric
     {
-
-        public string GetDisplayName()
-        {
-            return "Clustering Coefficient";
-        }
-
-
-        public INetworkMetric Copy()
-        {
-            return new ClusteringCoefficientMetric();
-        }
 
 
         public double Analyze(RandomNetwork pNetwork, bool pDirected)
@@ -163,6 +153,35 @@ namespace RCp1.Metrics
             }
 
             return sum / network.MGraph.VertexCount;
+        }
+
+        public double ClusteringCoefficient(RandomModelBase network)
+        {
+            List<UndirectedEdge<int>> neighbors;
+            double sum = 0;
+            int count = 0;
+            foreach (var v in network.Graph.Vertices)
+            {
+                neighbors = network.Graph.AdjacentEdges(v).ToList();
+                for (int i = 0; i < neighbors.Count; i++)
+                {
+                    var s = neighbors.ElementAt(i);
+                    for (int j = i + 1; j < neighbors.Count; j++)
+                    {
+                        var edgesNeighbor = network.Graph.AdjacentEdges(s.Target).ToList();
+                        if (edgesNeighbor.Count(e => e.Target == neighbors.ElementAt(j).Target) > 0)
+                            count++;
+                    }
+                }
+                if (count != 0)
+                {
+                    sum += count * 2.0 / (neighbors.Count * (neighbors.Count - 1));
+                }
+                count = 0;
+
+            }
+
+            return sum / network.Graph.VertexCount;
         }
     }
 }

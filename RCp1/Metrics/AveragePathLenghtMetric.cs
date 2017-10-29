@@ -9,18 +9,6 @@ namespace RCp1.Metrics
 {
     public class AveragePathLenghtMetric : INetworkMetric
     {
-        public string GetDisplayName()
-        {
-            return "Average Path Lenght";
-        }
-
-     
-        public INetworkMetric Copy()
-        {
-            return new AveragePathLenghtMetric();
-        }
-
-
 
         public double Analyze(RandomNetwork pNetwork, bool pDirected)
         {
